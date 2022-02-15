@@ -1,9 +1,9 @@
 import time
 import timeit
 
-print("=====================")
-print("----Hello World------")
-print("=====================")
+print("==========================================")
+print("----Loop Counter With Time Execution------")
+print("==========================================")
 
 contador = 1
 max_contador = int(input("Digite um número para fazer a contagem: "))
