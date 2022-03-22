@@ -1,3 +1,5 @@
+import csv
+
 header = ['nome', 'idade']
 dados = []
 opt = input('O que deseja fazer?\n 1- Cadastrar\n 0- Sair\n')
@@ -16,6 +18,6 @@ with open('users.csv', 'w', newline ='') as arquivo_csv:
     writer.writerows(dados)
     
 with open('users.csv', 'r') as csv_file:
-    csv.reader = csv.reader(csv_file, delimiter =',')
+    csv_reader = csv_reader(csv_file, delimiter =',')
     for row in csv_reader:
         print(row)
