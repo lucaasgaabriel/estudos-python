@@ -12,9 +12,6 @@ while opt != "2":
   opr = input("\n Digite o operador lógico: ")
   rslt = 0
 
-
-
-
   if(opr == "+"):
     rslt = n1 + n2
   elif(opr == "-"):
