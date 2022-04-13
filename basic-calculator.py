@@ -3,7 +3,7 @@ print("== Calculadora ===")
 print("==================")
 
 
-opt = input("\nDeseja calcular um número? (1-SIM ou 2-NÃO): ")
+opt = str
 
 
 while opt != "2":
