@@ -1,32 +1,40 @@
 def geraLinha():
-  print("="*18)
+    print("=" * 18)
 
 
+def operationNums(num1, num2, operator):
+    rsl = int
+
+    if opt != 2:
+        if operator == "+":
+            rsl = num1 + num2
+        elif operator == "-":
+            rsl = num1 - num2
+        elif operator == "*":
+            rsl = num1 * num2
+        elif operator == "/":
+            rsl = num1 / num2
+
+    print("\nA operação {} {} {} resulta em {}!".format(num1, operator, num2, rsl))
+
+
+# Início do programa
 geraLinha()
 print("== Calculadora ===")
 geraLinha()
 
+opt = int
 
-opt = str
+while opt :
+    num1 = int(input("\n Digite o 1º número: "))
+    num2 = int(input("\n Digite o 2º número: "))
+    operator = input("\n Digite o operador lógico: ")
+    operationNums(num1, num2, operator)
 
-
-while opt != "2":
-  n1 = int(input("\n Digite o 1º número: "))
-  n2 = int(input("\n Digite o 2º número: "))
-  opr = input("\n Digite o operador lógico: ")
-  rslt = 0
-
-  if(opr == "+"):
-    rslt = n1 + n2
-  elif(opr == "-"):
-    rslt = n1 - n2
-  elif(opr == "*"):
-    rslt = n1 * n2
-  elif(opr == "/"):
-    rslt = n1 / n2
-
-  print("\nA operação {} {} {} resulta em {}!".format(n1, opr, n2, rslt))
-
-  opt = input("\nDeseja efetuar outra operação? (1-SIM ou 2-NÃO): ")
+    if opt == 1 or opt == 2:
+      opt = input("\nDeseja efetuar outra operação? (1-SIM ou 2-NÃO): ")
+      return confirmation = True
+    else:
+      opt = input("\nOpção inválida! Deseja efetuar outra operação? (1-SIM ou 2-NÃO): ")
 
 print("*** FIM DO PROGRAMA ***")
