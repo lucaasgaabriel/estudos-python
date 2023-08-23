@@ -1,6 +1,10 @@
-print("==================")
+def geraLinha():
+  print("="*18)
+
+
+geraLinha()
 print("== Calculadora ===")
-print("==================")
+geraLinha()
 
 
 opt = str
