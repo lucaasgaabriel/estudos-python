@@ -1,10 +1,27 @@
 import requests
 
-url = 'https://api.exchangerate-api.com/v6/latest'
+url = "https://economia.awesomeapi.com.br/json/"
 
-req = requests.get(url)
+def converte_moeda():
+    print("Moedas para conversao: BRL, USD, EUR, BTC")
+    moeda_ori = str(input("Digite a moeda origem de conversao: ")).upper()
+    moeda_dest = str(input("Digite a moeda destino de conversao: ")).upper()
+    valor = float(input("Digite o valor a ser convertido: "))
 
-if req == '200':
-  valor_reais = float(input('Informe o valor em reais a ser convertido: \n'))
-  cotacao = dados['rates']['BRL']
-  print(f'R${valor_reais} em dólar valem US${(valor_reais / cotacao):.2f}')
+    try:
+        moedas = f"last/{moeda_ori}-{moeda_dest}"
+        response = requests.get(url+moedas).json()
+    except:
+        converte_moeda()
+    finally:
+        data_find = f"{moeda_ori}{moeda_dest}"
+        data = response.get(data_find)
+        
+        high = data.get('high')
+        low = data.get('low')
+
+        avr = (float(high) + float(low)) / 2
+        conversion = round(valor * avr, 2)
+
+        return f"\nA conversão realizada foi {data.get('name')} resultando o valor de {conversion} {data.get('codein')}.\nCotação realizada baseada na data {data.get('create_date')}"
+   
