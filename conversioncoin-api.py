@@ -12,7 +12,7 @@ def converte_moeda():
         moedas = f"last/{moeda_ori}-{moeda_dest}"
         response = requests.get(url+moedas).json()
     except:
-        converte_moeda()
+        print(Exception)
     finally:
         data_find = f"{moeda_ori}{moeda_dest}"
         data = response.get(data_find)
