@@ -14,7 +14,7 @@ for cep in ceps:
     time.sleep(0.5) #Timeout entre uma consulta e outra para não sobrecarregar a API
     uf = response.get('uf')
 
-    if uf == 'DF':
+    if uf == 'DF': #Teste de verificação se esse endereço está localizado no DF
         print(f'Esse CEP está localizado em {response.get('localidade')} - {response.get('uf')}')
     else:
         print(f'Esse CEP está localizado em {response.get('localidade')} - {response.get('uf')}')
